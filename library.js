@@ -31,7 +31,7 @@ var library = {
 
 var printPlaylists = function () {
   for (playlist in library['playlists']) {
-    //console.log(`${library['playlists'][playlist]['id']}: ${library['playlists'][playlist]['name']} - ${library['playlists'][playlist]['tracks'].length} tracks`);
+    console.log(`${library['playlists'][playlist]['id']}: ${library['playlists'][playlist]['name']} - ${library['playlists'][playlist]['tracks'].length} tracks`);
   }
 }
 
@@ -45,7 +45,7 @@ printPlaylists(library);
 
 var printTracks = function () {
   for (track in library['tracks']) {
-    //console.log(`${library['tracks'][track]['id']}: ${library['tracks'][track]['name']} by ${library['tracks'][track]['artist']} (${library['tracks'][track]['album']})`);
+    console.log(`${library['tracks'][track]['id']}: ${library['tracks'][track]['name']} by ${library['tracks'][track]['artist']} (${library['tracks'][track]['album']})`);
   }
 }
 
@@ -58,11 +58,11 @@ printTracks(library);
 
 var printPlaylist = function (playlistId) {
 
-  //console.log(`${library['playlists'][playlistId]['id']}: ${library['playlists'][playlistId]['name']} - ${library['playlists'][playlistId]['tracks'].length} tracks`);
+  console.log(`${library['playlists'][playlistId]['id']}: ${library['playlists'][playlistId]['name']} - ${library['playlists'][playlistId]['tracks'].length} tracks`);
 
   var track = library['playlists'][playlistId]['tracks'];
   for (let i = 0; i < track.length; i++) {
-    //console.log(`${library['tracks'][track[i]]['id']}: ${library['tracks'][track[i]]['name']} by ${library['tracks'][track[i]]['artist']} (${library['tracks'][track[i]]['album']})`);
+    (`${library['tracks'][track[i]]['id']}: ${library['tracks'][track[i]]['name']} by ${library['tracks'][track[i]]['artist']} (${library['tracks'][track[i]]['album']})`);
     }
   }
 
@@ -75,8 +75,7 @@ var addTrackToPlaylist = function (trackId, playlistId) {
   library['playlists'][playlistId]['tracks'].push(trackId);
 }
 
-addTrackToPlaylist("t01", "p02")
-
+addTrackToPlaylist("t01", "p02");
 
 // generates a unique id
 // (use this for addTrack and addPlaylist)
@@ -84,7 +83,6 @@ addTrackToPlaylist("t01", "p02")
 var uid = function() {
   return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
 }
-
 
 // adds a track to the library
 
@@ -97,7 +95,8 @@ var addTrack = function (name, artist, album) {
     album: album
   }
 }
-addTrack("Nolan", "Blahgggggggg", "Yaggggggggggy")
+
+addTrack("Nolan", "Blahgggggggg", "Yaggggggggggy");
 
 // adds a playlist to the library
 
@@ -110,8 +109,7 @@ var addPlaylist = function (name) {
   }
 }
 
-addPlaylist("my fav songs")
-console.log(library)
+addPlaylist("my fav songs");
 
 
 // STRETCH:
